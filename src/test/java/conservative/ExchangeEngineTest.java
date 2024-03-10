@@ -24,7 +24,7 @@ public class ExchangeEngineTest {
     }
 
     @Test
-    public void shouldConvertDollarsIntoTheExpectedAmount() {
+    public void shouldExchange_USD_87p_intoTheExpectedAmount() {
         ExchangeEngine engine = new ExchangeEngine("USD");
         List<Models.Denomination> expected = List.of(
                 Models.Dollar.QUARTER_COIN,
@@ -35,6 +35,37 @@ public class ExchangeEngineTest {
                 Models.Dollar.PENNY_COIN
         );
         List<Models.Denomination> actual = engine.exchange(87);
+        Assertions.assertArrayEquals(expected.toArray(), actual.toArray());
+    }
+
+    @Test
+    public void shouldExchange_USD_287p_intoTheExpectedAmount() {
+        ExchangeEngine engine = new ExchangeEngine("USD");
+        List<Models.Denomination> expected = List.of(
+                Models.Dollar.ONE_DOLLAR_NOTE,
+                Models.Dollar.ONE_DOLLAR_NOTE,
+                Models.Dollar.QUARTER_COIN,
+                Models.Dollar.QUARTER_COIN,
+                Models.Dollar.QUARTER_COIN,
+                Models.Dollar.DIME_COIN,
+                Models.Dollar.PENNY_COIN,
+                Models.Dollar.PENNY_COIN
+        );
+        List<Models.Denomination> actual = engine.exchange(287);
+        Assertions.assertArrayEquals(expected.toArray(), actual.toArray());
+    }
+
+    @Test
+    public void shouldExchange_EUR_287ct_intoTheExpectedAmount() {
+        ExchangeEngine engine = new ExchangeEngine("EUR");
+        List<Models.Denomination> expected = List.of(
+                Models.Euro.TWO_EURO_COIN,
+                Models.Euro.FIFTY_CENT_COIN,
+                Models.Euro.TWENTY_CENT_COIN,
+                Models.Euro.TEN_CENT_COIN,
+                Models.Euro.FIVE_CENT_COIN,
+                Models.Euro.TWO_CENT_COIN);
+        List<Models.Denomination> actual = engine.exchange(287);
         Assertions.assertArrayEquals(expected.toArray(), actual.toArray());
     }
 }

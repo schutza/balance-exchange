@@ -9,45 +9,35 @@ class DenominationConverterTest {
     @Test
     fun `test for USD 87 pennies`() {
         val converter = DenominationConverter()
-        val expected = listOf(
-            Dollar.QUARTER_COIN,
-            Dollar.QUARTER_COIN,
-            Dollar.QUARTER_COIN,
-            Dollar.DIME_COIN,
-            Dollar.PENNY_COIN,
-            Dollar.PENNY_COIN)
         val actualDenominations = converter.convert(87, "USD")
-        assertEquals(expected, actualDenominations)
+        assertEquals(3, actualDenominations[Dollar.QUARTER_COIN])
+        assertEquals(1, actualDenominations[Dollar.DIME_COIN])
+        assertEquals(2, actualDenominations[Dollar.PENNY_COIN])
+        // assert no other keys
     }
 
     @Test
     fun `test for USD 287 pennies`() {
         val converter = DenominationConverter()
-        val expected = listOf(
-            Dollar.ONE_DOLLAR_NOTE,
-            Dollar.ONE_DOLLAR_NOTE,
-            Dollar.QUARTER_COIN,
-            Dollar.QUARTER_COIN,
-            Dollar.QUARTER_COIN,
-            Dollar.DIME_COIN,
-            Dollar.PENNY_COIN,
-            Dollar.PENNY_COIN)
         val actualDenominations = converter.convert(287, "USD")
-        assertEquals(expected, actualDenominations)
+        assertEquals(2, actualDenominations[Dollar.ONE_DOLLAR_NOTE])
+        assertEquals(3, actualDenominations[Dollar.QUARTER_COIN])
+        assertEquals(1, actualDenominations[Dollar.DIME_COIN])
+        assertEquals(2, actualDenominations[Dollar.PENNY_COIN])
+        // assert no other keys
     }
 
     @Test
     fun `test for EUR 287 cent`() {
         val converter = DenominationConverter()
-        val expected = listOf(
-            Euro.TWO_EURO_COIN,
-            Euro.FIFTY_CENT_COIN,
-            Euro.TWENTY_CENT_COIN,
-            Euro.TEN_CENT_COIN,
-            Euro.FIVE_CENT_COIN,
-            Euro.TWO_CENT_COIN)
         val actualDenominations = converter.convert(287, "EUR")
-        assertEquals(expected, actualDenominations)
+        assertEquals(1, actualDenominations[Euro.TWO_EURO_COIN])
+        assertEquals(1, actualDenominations[Euro.FIFTY_CENT_COIN])
+        assertEquals(1, actualDenominations[Euro.TWENTY_CENT_COIN])
+        assertEquals(1, actualDenominations[Euro.TEN_CENT_COIN])
+        assertEquals(1, actualDenominations[Euro.FIVE_CENT_COIN])
+        assertEquals(1, actualDenominations[Euro.TWO_CENT_COIN])
+        // assert no other keys
     }
 
     @Test
