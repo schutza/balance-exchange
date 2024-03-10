@@ -57,5 +57,4 @@ class DenominationConverterTest {
             converter.convert(287, "GBP")
         }
     }
-
 }

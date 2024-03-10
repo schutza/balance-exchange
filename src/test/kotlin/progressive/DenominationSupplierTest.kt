@@ -2,9 +2,6 @@ package progressive
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import progressive.DenominationSupplier
-import progressive.Dollar
-import progressive.Euro
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 

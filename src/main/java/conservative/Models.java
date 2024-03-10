@@ -19,12 +19,12 @@ public class Models {
         QUARTER_COIN(25, DenominationType.COIN),
         DIME_COIN(10, DenominationType.COIN),
         PENNY_COIN(1, DenominationType.COIN);
-        private Dollar(Integer value, DenominationType type) {
+        Dollar(Integer value, DenominationType type) {
             this.value = value;
             this.type = type;
         }
-        private Integer value;
-        private DenominationType type;
+        private final Integer value;
+        private final DenominationType type;
 
         @Override
         public Integer getValue() {
@@ -47,12 +47,12 @@ public class Models {
         TWO_CENT_COIN(2, DenominationType.COIN),
         ONE_CENT_COIN(1, DenominationType.COIN);
 
-        private Euro(Integer value, DenominationType type) {
+        Euro(Integer value, DenominationType type) {
             this.value = value;
             this.type = type;
         }
-        private Integer value;
-        private DenominationType type;
+        private final Integer value;
+        private final DenominationType type;
         public Integer getValue() {
             return value;
         }

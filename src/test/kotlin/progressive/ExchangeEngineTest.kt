@@ -2,7 +2,6 @@ package progressive
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import progressive.ExchangeEngine
 import java.lang.AssertionError
 
 class ExchangeEngineTest {
