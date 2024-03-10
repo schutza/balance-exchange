@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class ExchangeEngine {
 
-    private String currency;
+    private final String currency;
     public ExchangeEngine(String currency){
         this.currency = currency;
     }

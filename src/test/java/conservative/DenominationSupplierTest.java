@@ -7,8 +7,8 @@ public class DenominationSupplierTest {
 
     @Test
     public void shouldThrowForInvalidCurrency() {
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            DenominationSupplier.forCurrency("GBP", DenominationSupplier.SortOrder.DESC);
-        });
+        Assertions.assertThrows(UnsupportedOperationException.class, () ->
+            DenominationSupplier.forCurrency("GBP", DenominationSupplier.SortOrder.DESC)
+        );
     }
 }

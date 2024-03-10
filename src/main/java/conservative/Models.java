@@ -6,7 +6,7 @@ public class Models {
         Integer getValue();
     }
     enum DenominationType {
-        COIN, NOTE;
+        COIN, NOTE
     }
     enum Dollar implements Denomination {
 

@@ -10,17 +10,17 @@ public class ExchangeEngineTest {
     @Test
     public void shouldThrowWhenInputIsZero() {
         ExchangeEngine engine = new ExchangeEngine("USD");
-        Assertions.assertThrows(AssertionError.class, () -> {
-           engine.exchange(0);
-        });
+        Assertions.assertThrows(AssertionError.class, () ->
+           engine.exchange(0)
+        );
     }
 
     @Test
     public void shouldThrowWhenInputIsNegative() {
         ExchangeEngine engine = new ExchangeEngine("USD");
-        Assertions.assertThrows(AssertionError.class, () -> {
-            engine.exchange(-1);
-        });
+        Assertions.assertThrows(AssertionError.class, () ->
+            engine.exchange(-1)
+        );
     }
 
     @Test

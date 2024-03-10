@@ -57,8 +57,8 @@ public class DenominationConverterTest {
 
     @Test
     public void shouldThrow_GBP() {
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            converter.convert(287, "GBP");
-        });
+        Assertions.assertThrows(UnsupportedOperationException.class, () ->
+            converter.convert(287, "GBP")
+        );
     }
 }
