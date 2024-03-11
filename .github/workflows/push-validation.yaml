@@ -2,6 +2,8 @@ name: Push Validation
 
 on:
   push:
+    branches:
+      - 'main'
     paths:
       - '**.java'
       - '**.kt'
