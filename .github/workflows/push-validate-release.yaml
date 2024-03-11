@@ -41,6 +41,7 @@ jobs:
       - name: Release
         uses: qcastel/github-actions-maven-release@master
         with:
+          release-branch-name: "main"
           version-patch: true
           git-release-bot-name: "bot-idhub"
           git-release-bot-email: "bot@idhub.io"
