@@ -39,7 +39,6 @@ jobs:
         run: mvn --batch-mode clean verify
 
       - name: Release
-        if: github.
         uses: qcastel/github-actions-maven-release@master
         with:
           git-release-bot-name: "bot-idhub"
